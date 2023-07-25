@@ -49,7 +49,7 @@ while True:
     discrete_state = get_discrete_from_state(env.reset(seed=42))
     episode_reward = 0
     while True:
-        action = np.argmax(q_table[discrete_state]) if random.randint(0, 9) < 8 else np.argmin(q_table[discrete_state])
+        action = np.argmax(q_table[discrete_state]) if random.randint(0, 99) < 80 else np.argmin(q_table[discrete_state])
         new_state, reward, done, _, _ = env.step(action)
         next_discrete_state = get_discrete_from_state((new_state, ))
         if running_reward > 450 and not opened_env:
